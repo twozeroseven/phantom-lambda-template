@@ -21,7 +21,7 @@
     "aws-sdk": "^2.7.8"
   },
   "scripts": {
-    //"deploy-pipeline": "aws cloudformation deploy --template-file pipeline.yaml --stack-name \"phantom-pipeline\" --capabilities CAPABILITY_IAM",
+    "deploy-pipeline": "aws cloudformation deploy --template-file pipeline.yaml --stack-name \"phantom-pipeline\" --capabilities CAPABILITY_IAM",
     "package": "aws cloudformation package --template-file serverless.yaml --s3-bucket arn:aws:s3:::codepipeline-us-west-2-108483879393 --s3-prefix \"phantom\" --output-template-file serverless-output.yaml",
     "publish": "aws cloudformation deploy --template-file serverless-output.yaml --stack-name \"phantom\" --capabilities CAPABILITY_IAM",
     "deploy": "npm run package && npm run publish",
